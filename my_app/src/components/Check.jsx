@@ -25,13 +25,18 @@ class Check extends Component {
         ];
 
         const items = names.map((item, index) => {
-            return <li key={index}>Name: {item.name}, Age: {item.age}</li>
+            return (<li key={index}>
+                Name: {item.name}, Age: {item.age}
+                <button className='btn btn-sm btn-success'>edit</button>
+                <button className='btn btn-sm btn-danger'>delete</button>
+
+            </li>)
         })
 
         return (<div className='app'>
             <h1>Student list</h1>
             <div>
-                <ul>
+                <ul className='list'>
                     {items}
                 </ul>
             </div>
