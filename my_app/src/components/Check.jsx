@@ -18,10 +18,14 @@ class Check extends Component {
 
     render() {
 
-        const names = ['alex', 'nika', 'kobi'];
+        const names = [
+            { name: 'alex', age: 23 },
+            { name: 'nika', age: 32 },
+            { name: 'kobi', age: 8 }
+        ];
 
         const items = names.map((item, index) => {
-            return <li key={index}>{item}</li>
+            return <li key={index}>Name: {item.name}, Age: {item.age}</li>
         })
 
         return (<div className='app'>
