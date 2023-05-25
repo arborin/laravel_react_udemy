@@ -1,13 +1,24 @@
 // import logo from './logo.svg';
 import './App.css';
-import Check from './components/Check';
+import Nav from './nav';
+import Home from './components/Home';
+import About from './components/About';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import WritePost from './components/WritePost';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <Check />
-      </header>
+      <BrowserRouter>
+
+        <Nav />
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/new-post" element={<WritePost />} />
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
