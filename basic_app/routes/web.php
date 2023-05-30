@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -43,4 +44,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
             'users' => $users
         ]);
     })->name('dashboard');
+
+    Route::get('/category/all', [CategoryController::class, 'index'])->name('all.category');
 });
