@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ContactController;
+use App\Models\User;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +32,15 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+
+        // elequant
+        // $users = User::all();
+
+        // query builder
+        $users = DB::table('users')->get();
+
+        return view('dashboard', [
+            'users' => $users
+        ]);
     })->name('dashboard');
 });

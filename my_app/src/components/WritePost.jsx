@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios'
 
 export default class WritePost extends Component {
 
@@ -10,6 +11,14 @@ export default class WritePost extends Component {
 
     formSubmit = (e) => {
         e.preventDefault();
+        axios.post('/test', {
+            firstName: this.state.name,
+            email: this.state.email
+        }).then((response) => {
+            console.log(response)
+        }).catch((error) => {
+            console.log(error)
+        })
     }
 
     render() {
