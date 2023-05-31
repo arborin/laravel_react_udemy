@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Models\User;
 use Illuminate\Support\Facades\DB;
@@ -29,6 +30,9 @@ Route::get('/about', function () {
 })->middleware('check');
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
+
+Route::get('/category/all', [CategoryController::class, 'index'])->name('all.category');
+Route::post('/category/add', [CategoryController::class, 'addCategory'])->name('add.category');
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
