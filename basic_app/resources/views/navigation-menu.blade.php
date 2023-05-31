@@ -16,7 +16,11 @@
                         {{ __('Dashboard') }}
                     </x-jet-nav-link>
                     <x-jet-nav-link href="{{ route('all.category') }}">
+<<<<<<< HEAD
                         Cateogries
+=======
+                        All Categories
+>>>>>>> ab7252750e04cca414bfb2b87ec13b23f80c82f9
                     </x-jet-nav-link>
                 </div>
             </div>

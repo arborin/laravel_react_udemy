@@ -31,6 +31,9 @@ Route::get('/about', function () {
 
 Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
+Route::get('/category/all', [CategoryController::class, 'index'])->name('all.category');
+Route::post('/category/add', [CategoryController::class, 'addCategory'])->name('add.category');
+
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
 
