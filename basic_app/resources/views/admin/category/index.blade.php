@@ -3,52 +3,12 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Dashboard') }}
             {{ Auth::user()->name }}
-<<<<<<< HEAD
-            <p>Users: {{ count($users) }}</p>
-=======
             <p>Categories: {{ count([1, 2, 3]) }}</p>
->>>>>>> ab7252750e04cca414bfb2b87ec13b23f80c82f9
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-<<<<<<< HEAD
-            <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                {{-- <x-jet-welcome /> --}}
-                <div class="container">
-                    <div class="row">
-
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">SL No</th>
-                                    <th scope="col">Name</th>
-                                    <th scope="col">Email</th>
-                                    <th scope="col">Created At</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @php($i = 1)
-                                @foreach ($users as $user)
-                                    <tr>
-                                        <td>{{ $i }}</td>
-                                        <td>{{ $user->name }}</td>
-                                        <td>{{ $user->email }}</td>
-                                        <td>{{ Carbon\Carbon::parse($user->created_at)->diffForHumans() }}</td>
-                                    </tr>
-                                    @php($i++)
-                                @endforeach
-
-
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-=======
 
             {{-- <x-jet-welcome /> --}}
             <div class="container">
@@ -68,7 +28,8 @@
                                     <thead>
                                         <tr>
                                             <th scope="col">SL No</th>
-                                            <th scope="col">Name</th>
+                                            <th scope="col">Category Name</th>
+                                            <th scope="col">User</th>
                                             <th scope="col">Created At</th>
                                         </tr>
                                     </thead>
@@ -77,7 +38,14 @@
                                             <tr>
                                                 <td>{{ $category->id }}</td>
                                                 <td>{{ $category->category_name }}</td>
-                                                <td>{{ $category->created_at }}</td>
+                                                <td>{{ $category->user_id }}</td>
+                                                <td>
+                                                    @if ($category->created_at != null)
+                                                        {{ $category->created_at->diffForHumans() }}
+                                                    @else
+                                                        <span class="text-danger">თარიღი ვერ მოიძებნა</span>
+                                                    @endif
+                                                </td>
                                             </tr>
                                         @endforeach
                                     </tbody>
@@ -108,5 +76,4 @@
                         </div>
                     </div>
                 </div>
->>>>>>> ab7252750e04cca414bfb2b87ec13b23f80c82f9
 </x-app-layout>
