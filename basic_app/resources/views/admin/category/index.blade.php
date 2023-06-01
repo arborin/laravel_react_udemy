@@ -36,12 +36,12 @@
                                     <tbody>
                                         @foreach ($categories as $category)
                                             <tr>
-                                                <td>{{ $category->id }}</td>
+                                                <td>{{ $categories->firstItem() + $loop->index }}</td>
                                                 <td>{{ $category->category_name }}</td>
                                                 <td>{{ $category->user_id }}</td>
                                                 <td>
                                                     @if ($category->created_at != null)
-                                                        {{ $category->created_at->diffForHumans() }}
+                                                        {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }}
                                                     @else
                                                         <span class="text-danger">თარიღი ვერ მოიძებნა</span>
                                                     @endif
@@ -50,6 +50,7 @@
                                         @endforeach
                                     </tbody>
                                 </table>
+                                {{ $categories->links() }}
                             </div>
 
                         </div>
