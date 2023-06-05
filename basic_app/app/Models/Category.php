@@ -13,6 +13,16 @@ class Category extends Model
 
     protected $fillable = [
         'user_id',
-        'name'
+        'category_name'
     ];
+
+
+    public function user()
+    {
+        // has one one2many
+        // რომელ ცხრილთან ვაერთიანებთ,
+        // forein_key
+        // local key
+        return $this->hasOne(User::class, 'id', 'user_id');
+    }
 }

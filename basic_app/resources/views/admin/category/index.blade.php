@@ -31,6 +31,7 @@
                                             <th scope="col">Category Name</th>
                                             <th scope="col">User</th>
                                             <th scope="col">Created At</th>
+                                            <th scope="col">Action</th>
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -38,13 +39,19 @@
                                             <tr>
                                                 <td>{{ $categories->firstItem() + $loop->index }}</td>
                                                 <td>{{ $category->category_name }}</td>
-                                                <td>{{ $category->user_id }}</td>
+                                                <td>{{ $category->user_name }}</td>
                                                 <td>
                                                     @if ($category->created_at != null)
                                                         {{ Carbon\Carbon::parse($category->created_at)->diffForHumans() }}
                                                     @else
                                                         <span class="text-danger">თარიღი ვერ მოიძებნა</span>
                                                     @endif
+                                                </td>
+                                                <td>
+                                                    <a href="{{ url("category/edit/$category->id") }}"
+                                                        class="btn btn-warning btn-sm">Edit</a>
+                                                    <a href={{ url("softdelete/category/$category->id") }}
+                                                        class="btn btn-danger btn-sm">Delete</a>
                                                 </td>
                                             </tr>
                                         @endforeach

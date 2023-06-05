@@ -33,6 +33,10 @@ Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 
 Route::get('/category/all', [CategoryController::class, 'index'])->name('all.category');
 Route::post('/category/add', [CategoryController::class, 'addCategory'])->name('add.category');
+Route::get('/category/edit/{id}', [CategoryController::class, 'editCategory'])->name('edit.category');
+Route::post('/category/update/{id}', [CategoryController::class, 'updateCategory'])->name('update.category');
+Route::get('/softdelete/category/{id}', [CategoryController::class, 'softDelete'])->name('soft.delete.category');
+
 
 Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified'])->group(function () {
     Route::get('/dashboard', function () {
