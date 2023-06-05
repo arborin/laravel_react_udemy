@@ -45,11 +45,9 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
         // $users = User::all();
 
         // query builder
-        $users = DB::table('users')->get();
+        // $users = DB::table('users')->get();
 
-        return view('dashboard', [
-            'users' => $users
-        ]);
+        return view('admin.index');
     })->name('dashboard');
 
     Route::get('/category/all', [CategoryController::class, 'index'])->name('all.category');
