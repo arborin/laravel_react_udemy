@@ -52,3 +52,6 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
     Route::get('/category/all', [CategoryController::class, 'index'])->name('all.category');
 });
+
+
+Route::get('/user/logout', [ContactController::class, 'logout'])->name('user.logout');
