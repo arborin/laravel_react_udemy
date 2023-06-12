@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
 use App\Models\User;
@@ -55,3 +56,8 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 
 Route::get('/user/logout', [ContactController::class, 'logout'])->name('user.logout');
+
+
+Route::get('/brand/all', [BrandController::class, 'index'])->name('all.brand');
+Route::post('/brand/store', [BrandController::class, 'store'])->name('store.brand');
+Route::get('/brand/edit/{id}', [BrandController::class, 'edit'])->name('edit.brand');
