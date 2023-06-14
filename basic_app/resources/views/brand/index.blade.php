@@ -32,6 +32,7 @@
             <td><img src="{{ asset($brand['brand_img']) }}" width="40px" /></td>
             <td>{{ Carbon\Carbon::parse($brand['created_at'])->diffForHumans() }}</td>
             <td><a href="{{ route('edit.brand', ['id' => $brand['id']]) }}">EDIT</a></td>
+            <td><a href="{{ route('delete.brand', ['id' => $brand['id']]) }}">Delete</a></td>
         </tr>
     @endforeach
 </table>

@@ -55,4 +55,39 @@ class BrandController extends Controller
             'brand' => $brand
         ]);
     }
+
+
+    public function update(Request $request)
+    {
+        $validatedData = $request->validate([
+            'brand_name' => 'required|min:4',
+        ]);
+
+        $old_image = $request->old_image;
+        $id = $request->id;
+
+        $brand_img = $request->file('brand_img');
+
+
+        $name_gen = hexdec(uniqid());
+        $img_ext = strtolower($brand_img->getClientOriginalExtension());
+        $image_name = "$name_gen.$img_ext";
+        $up_location = 'image/brand/';
+
+        $last_img = $up_location . $image_name;
+        $brand_img->move($up_location, $image_name);
+        // dd($request);
+
+        if ($old_image) {
+            unlink($old_image);
+        }
+
+        Brand::find($id)->update([
+            'brand_name' => $request->brand_name,
+            'brand_img' => $last_img,
+            'created_at' => Carbon::now()
+        ]);
+
+        return Redirect()->route('all.brand')->with("success", "brand inserted!");
+    }
 }

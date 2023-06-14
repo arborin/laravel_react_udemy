@@ -61,3 +61,5 @@ Route::get('/user/logout', [ContactController::class, 'logout'])->name('user.log
 Route::get('/brand/all', [BrandController::class, 'index'])->name('all.brand');
 Route::post('/brand/store', [BrandController::class, 'store'])->name('store.brand');
 Route::get('/brand/edit/{id}', [BrandController::class, 'edit'])->name('edit.brand');
+Route::post('/brand/update/', [BrandController::class, 'update'])->name('update.brand');
+Route::post('/brand/update/', [BrandController::class, 'update'])->name('update.brand');
