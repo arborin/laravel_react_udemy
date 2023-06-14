@@ -57,9 +57,13 @@ Route::middleware(['auth:sanctum', config('jetstream.auth_session'), 'verified']
 
 Route::get('/user/logout', [ContactController::class, 'logout'])->name('user.logout');
 
-
 Route::get('/brand/all', [BrandController::class, 'index'])->name('all.brand');
+Route::get('/multi/image', [BrandController::class, 'multipic'])->name('multi.image');
+
 Route::post('/brand/store', [BrandController::class, 'store'])->name('store.brand');
 Route::get('/brand/edit/{id}', [BrandController::class, 'edit'])->name('edit.brand');
+
 Route::post('/brand/update/', [BrandController::class, 'update'])->name('update.brand');
-Route::post('/brand/update/', [BrandController::class, 'update'])->name('update.brand');
+Route::get('/brand/delete/{id}', [BrandController::class, 'delete'])->name('delete.brand');
+
+Route::post('/store/images', [BrandController::class, 'storeImages'])->name('store.images');

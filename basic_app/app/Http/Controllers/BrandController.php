@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Brand;
 use Carbon\Carbon;
+use App\Models\Brand;
+use App\Models\Multipic;
 use Illuminate\Http\Request;
+use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\Redirect;
 
 class BrandController extends Controller
 {
@@ -26,8 +29,12 @@ class BrandController extends Controller
 
         $brand_img = $request->file('brand_img');
 
-
         $name_gen = hexdec(uniqid());
+
+        // Image::make($brand_img)->resize(300, 200)->save("image/brand/$name_gen");
+
+        // $last_img = "image/brand/$name_gen";
+
         $img_ext = strtolower($brand_img->getClientOriginalExtension());
         $image_name = "$name_gen.$img_ext";
         $up_location = 'image/brand/';
@@ -89,5 +96,32 @@ class BrandController extends Controller
         ]);
 
         return Redirect()->route('all.brand')->with("success", "brand inserted!");
+    }
+
+    public function delete($id)
+    {
+        $image = Brand::find($id);
+
+        $old_img = $image->brand_img;
+
+        if ($old_img) {
+            unlink($old_img);
+        }
+
+
+        Brand::find($id)->delete();
+        return Redirect()->back()->with('success', "brand deleted!");
+    }
+
+
+    public function multipic()
+    {
+        $images = Multipic::all();
+        return view('multipic.index', compact('images'));
+    }
+
+    public function storeImages(Request $request)
+    {
+        dd($request->brand_img);
     }
 }
