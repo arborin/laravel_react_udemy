@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Api\SectionController;
 use App\Http\Controllers\BrandController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ContactController;
@@ -18,9 +19,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', [SectionController::class, 'sections']);
+
 
 Route::get('/home', function () {
     echo "HOME";
