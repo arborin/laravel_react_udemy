@@ -50,7 +50,6 @@ class StudentClasssController extends Controller
             'updated_at' => Carbon::now()
         ]);
 
-
         return response('data UPDATED successfully');
     }
 

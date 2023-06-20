@@ -49,6 +49,7 @@ class SectionController extends Controller
 
         Section::find($id)->update([
             'section_name' => $request->section_name,
+            'class_id' => $request->class_id,
             'price' => $request->price,
             'updated_at' => Carbon::now()
         ]);
