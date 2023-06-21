@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ForgetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -23,3 +24,9 @@ use Illuminate\Support\Facades\Route;
 
 // Login Routes
 Route::post('/login', [AuthController::class, 'Login']);
+
+// Register user
+Route::post('/register', [AuthController::class, 'Register']);
+
+// Forget password
+Route::post('/forget-passwprd', [ForgetController::class, 'ForgetPassword']);

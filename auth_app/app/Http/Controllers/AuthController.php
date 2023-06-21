@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\RegisterRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Models\User;
@@ -16,6 +17,7 @@ class AuthController extends Controller
     {
         try {
             if (Auth::attempt($request->only('email', 'password'))) {
+                /** @var \App\Models\User $user **/
                 $user = Auth::user();
                 $token = $user->createToken('app')->accessToken;
 
@@ -35,4 +37,28 @@ class AuthController extends Controller
             'message' => "Invalid email or password"
         ], 401);
     }
+
+
+    public function Register(RegisterRequest $request)
+    {
+        try {
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'password' => Hash::make($request->password),
+            ]);
+
+            $token = $user->createToken('app')->accessToken;
+
+            return response([
+                'message' => "Registration Seccessfull",
+                'token' => $token,
+                'user' => $user
+            ]);
+        } catch (Exception $e) {
+            return response([
+                'message' => "Register error"
+            ], 400);
+        }
+    } // end method
 }
