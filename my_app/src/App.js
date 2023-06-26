@@ -1,35 +1,26 @@
-import { useState } from 'react';
+
 import './App.css';
-// import Nav from './nav';
-// import Home from './components/Home';
-// import About from './components/About';
-// import { BrowserRouter, Routes, Route } from 'react-router-dom';
-// import WritePost from './components/WritePost';
+import Header from './common/Header';
+import Home from './components/Home';
+import About from './components/About';
+import { BrowserRouter, Routes, Route, Outlet, NavLink } from 'react-router-dom';
+
+
 
 function App() {
 
-
-
-  const [count, increment] = useState(0)
-
-  const clikcMe = () => {
-
-    increment(count + 1)
-  }
-
   return (
+
     <div className="App">
-      <button onClick={() => clikcMe()}>Increase {count}</button>
-      {/* <BrowserRouter>
-
-        <Nav />
-
+      <Header />
+      <BrowserRouter>
         <Routes>
-          <Route path="/" element={<Home />} />
+          <Route index element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/new-post" element={<WritePost />} />
+          {/* <Route path="contact" element={<Contact />} /> */}
+          {/* <Route path="*" element={<NoPage />} /> */}
         </Routes>
-      </BrowserRouter> */}
+      </BrowserRouter>
     </div>
   );
 }
