@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\AuthController;
-use App\Http\Controllers\ForgetController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\ResetController;
+use App\Http\Controllers\ForgetController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -29,4 +30,10 @@ Route::post('/login', [AuthController::class, 'Login']);
 Route::post('/register', [AuthController::class, 'Register']);
 
 // Forget password
-Route::post('/forget-passwprd', [ForgetController::class, 'ForgetPassword']);
+Route::post('/forget-password', [ForgetController::class, 'ForgetPassword']);
+
+// Reset password
+Route::post('/reset-password', [ResetController::class, 'ResetPassword']);
+
+// Current user route
+Route::post('/user', [UserController::class, 'User']);

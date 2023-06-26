@@ -40,7 +40,7 @@ class ForgetMail extends Mailable
     {
         return new Content(
             view: 'email',
-            text: $this->token
+            text: 'email'
         );
     }
 
