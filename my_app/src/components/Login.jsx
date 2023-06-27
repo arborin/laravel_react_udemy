@@ -7,6 +7,7 @@ export default function Login() {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const [login, setLogin] = useState(false);
 
     const formSubmit = (e) => {
         e.preventDefault();
@@ -18,7 +19,10 @@ export default function Login() {
             email: email,
             password: password
         }).then(function (response) {
-            console.log(response);
+            console.log(response.data);
+            localStorage.setItem("token", response.data.token.id)
+            setLogin(true);
+
         }).catch(function (error) {
             console.log(error);
         })
