@@ -1,7 +1,19 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
+import axios from 'axios';
 
 export default function Nav() {
+
+    const [user, setUser] = useState('')
+
+    useEffect(() => {
+        axios.get('/user').then((response) => {
+            console.log("RESPONSE HEADER");
+            setUser(response.data);
+
+        }).catch((error) => { console.log(error) })
+    }, []);
+
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <Link to="/" className="navbar-brand">React</Link>
@@ -28,6 +40,6 @@ export default function Nav() {
                     </ul>
                 </span>
             </div>
-        </nav >
+        </nav>
     )
 }

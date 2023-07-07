@@ -37,3 +37,4 @@ Route::post('/reset-password', [ResetController::class, 'ResetPassword']);
 
 // Current user route
 Route::post('/user', [UserController::class, 'User']);
+Route::get('/user', [UserController::class, 'getUser']);
