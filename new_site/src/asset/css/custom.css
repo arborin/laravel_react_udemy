@@ -5,4 +5,35 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    position: relative;
+    padding: 0px;
+
+}
+
+.topBannerOverlay {
+    position: absolute;
+    min-height: 550px;
+    width: 100%;
+    background: rgb(0, 0, 0, 0.7);
+
+}
+
+
+.topContent {
+    margin-top: 10em;
+}
+
+.topTitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 700;
+    color: #ffffff;
+    font-size: 48px;
+}
+
+
+.topSubTitle {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 22px;
 }
