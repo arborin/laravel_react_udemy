@@ -14,7 +14,7 @@ export default function Summary() {
                                 <hr />
                             </Col>
                             <Col>
-                                <h1>25000</h1>
+                                <h1> 25000</h1>
                                 <h4>Students worldwide</h4>
                                 <hr className='w-25' />
                             </Col>
@@ -39,8 +39,8 @@ export default function Summary() {
                             </Card>
                         </Row>
                     </Col>
-                </Row>
-            </Container>
+                </Row >
+            </Container >
         </>
     )
 }
