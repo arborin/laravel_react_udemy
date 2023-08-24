@@ -1,0 +1,28 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.hero {
+    min-height: 100vh;
+    background-color: red;
+    background-image: url('background.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-size: 60px;
+    color: aliceblue;
+}
+
+.banner {
+    min-height: 100vh;
+    background: blue;
+}
