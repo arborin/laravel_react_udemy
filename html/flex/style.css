@@ -1,0 +1,72 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #f3f3f3;
+}
+
+.container {
+    border: 5px solid red;
+    /* display: flex; */
+    display: flex;
+
+    /* flex direction default row !parent!*/
+    /* ======================================== */
+    /* flex-direction: row; */
+    /* flex-direction: row-reverse; */
+
+    /* flex direction column*/
+    /* ======================================== */
+    /* flex-direction: column; */
+    /* flex-direction: column-reverse; */
+
+    /* flex wrap*/
+    /* flex-wrap: wrap; */
+
+    /* JUSTIFY CONTENT */
+    /* justify-content: start; */
+    /* justify-content: end; */
+    /* justify-content: space-between; */
+    /* justify-content: space-around; */
+    /* justify-content: center; */
+    /* justify-content: space-evenly; */
+
+    /* ALIGN ITEMS */
+    /* default stretch*/
+    height: 200px;
+    /* align-items: stretch; */
+    /* align-items: start; */
+    /* align-items: end; */
+    align-items: center;
+    /* align-items: baseline; */
+}
+
+.box {
+    padding: 30px;
+    text-align: center;
+    font-size: 35;
+    border: 1px solid orange;
+}
+
+.box-1 {
+    background: cadetblue;
+}
+
+.box-2 {
+    background: goldenrod;
+}
+
+.box-3 {
+    background: darkkhaki;
+    font-size: 65px;
+}
+
+.box-4 {
+    background: navajowhite;
+}
+
+.box-5 {
+    background: coral;
+}
+
+.generic {
+    background: #8ef880;
+}
