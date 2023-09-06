@@ -13,6 +13,16 @@ export default class Counter extends Component {
         this.setState({ count: this.state.count - 1 })
     }
 
+    componentDidMount() {
+        // RUN ONCE
+        document.title = `Clicked ${this.state.count}`;
+    }
+
+    componentDidUpdate() {
+        // Update
+        document.title = `Clicked ${this.state.count}`;
+    }
+
 
 
     render() {

@@ -7,9 +7,7 @@ function App() {
       <header className="App-header">
         Learn React
       </header>
-      <div>
-        <Counter />
-      </div>
+
       <div>
         <HookCounter />
       </div>
