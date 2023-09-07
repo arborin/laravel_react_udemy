@@ -1,5 +1,13 @@
+import Link from 'next/link'
+import Nav from '../components/Nav';
+
 const About = () => {
-    return <h2>ABOUT</h2>
+    return (
+        <div>
+            <Nav />
+            <h1>About page</h1>
+        </div>
+    )
 }
 
 
