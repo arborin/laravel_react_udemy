@@ -1,9 +1,15 @@
 import Nav from "./Nav";
 
 
-const Layout = (props) => {
+const Layout = ({ mainTitle, footer, children }) => {
     return (<>
         <Nav />
-        {props.children}
+        <h1>{mainTitle}</h1>
+        <hr />
+        {children}
+        <hr />
+        {footer}
     </>)
 }
+
+export default Layout;

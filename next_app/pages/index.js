@@ -1,17 +1,16 @@
 import Link from 'next/link';
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 import Head from 'next/head';
 
 const Index = () => {
     return (
-        <div>
+        <Layout title="MAIN PAGE" footer={`copyrighgt ${new Date().getFullYear()}`}>
             <Head>
                 <title>My page title</title>
-                <meta property="og:title" content="My page title" key="title" />
             </Head>
-            <Nav />
             <h1>Home page</h1>
-        </div>
+            <img src="/static/logo.jpg" height="100" />
+        </Layout>
     )
 }
 

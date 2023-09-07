@@ -1,12 +1,11 @@
 import Link from 'next/link'
-import Nav from '../components/Nav';
+import Layout from '../components/Layout';
 
 const About = () => {
     return (
-        <div>
-            <Nav />
+        <Layout title="ABOUT PAGE" footer={`N KOBAIDZE copyrighgt ${new Date().getFullYear()}`}>
             <h1>About page</h1>
-        </div>
+        </Layout>
     )
 }
 
