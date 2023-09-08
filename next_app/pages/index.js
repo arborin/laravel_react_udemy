@@ -8,7 +8,7 @@ const Index = () => {
             <Head>
                 <title>My page title</title>
             </Head>
-            <h1>Home page</h1>
+            <h1>Home page 111</h1>
             <img src="/static/logo.jpg" height="100" />
         </Layout>
     )

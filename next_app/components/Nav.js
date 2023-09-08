@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const Nav = () => {
     return (
-        <div>
+        <div className="my-nav">
             <Link href='/'>Home</Link>
             <Link href='/about'>About</Link>
         </div>
