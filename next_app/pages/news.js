@@ -4,9 +4,9 @@ const News = ({ news }) => {
         <div>
             <h1>NEWS</h1>
 
-            {news.map((news) => (
-                <h1>
-                    {news.id} - {news.url}
+            {news.map((n, i) => (
+                <h1 key={i}>
+                    {news.id} - {n.url}
                 </h1>
             ))
             }
